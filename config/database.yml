@@ -1,0 +1,12 @@
+default: &default
+ adapter: mysql2
+ encoding: unicode
+ pool: 5
+
+development:
+ <<: *default
+ database: miniquipu_development
+
+test:
+ <<: *default
+ database: miniquipu_test
