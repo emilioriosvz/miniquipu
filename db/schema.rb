@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115221816) do
+ActiveRecord::Schema.define(version: 20150115230637) do
+
+  create_table "articles", force: :cascade do |t|
+    t.integer "code",  limit: 4
+    t.string  "name",  limit: 255
+    t.float   "price", limit: 24
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "name",  limit: 255
+    t.float  "value", limit: 24
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.date   "invoice_date"
