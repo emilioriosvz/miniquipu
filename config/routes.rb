@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :invoices
 
-  get 'articles/index'
+  resources :articles
 
   root 'invoices#index'
 
