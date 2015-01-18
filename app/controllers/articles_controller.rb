@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-<<<<<<< HEAD
-    @articles = Article.all
+    @articles = Article.expenses
   end
 
   def new
@@ -9,10 +8,17 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    article = Article.new(article_params)
+    invoice = Invoice.find_by(id: params[:invoice_id])
 
-    if @article.save!
-      redirect_to articles_path
+    if article.save!
+      unless invoice.nil?
+        invoice.articles.push(article)
+        invoice.save!
+        redirect_to new_invoice_article_path(invoice)
+      else
+        redirect_to articles_path
+      end
     else
       render 'new'
     end
@@ -34,11 +40,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:code, :name, :price)
+      params.require(:article).permit(:name, :price)
     end
+end
 
-end
-=======
-  end
-end
->>>>>>> cfb1231e04abc8ca899c7fb8b26a8998a54d5e82

@@ -4,11 +4,13 @@ div class="col-xs-8 col-xs-offset-2"
     tr
       th Date
       th Client
+      th Items
     tr
     - @invoices.each do |invoice|
       tr
         td == invoice.invoice_date
         td == invoice.client
+        td == invoice.articles.count
         td == link_to 'Show', invoice_path(invoice)
         td == link_to 'Edit', edit_invoice_path(invoice)
         td == link_to 'Destroy', invoice_path(invoice),

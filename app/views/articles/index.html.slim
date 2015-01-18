@@ -2,12 +2,11 @@ div class="col-xs-8 col-xs-offset-2"
   h1 Articles
   table.table
     tr
-      th Date
-      th Client
+      th Name
+      th Price
     tr
     - @articles.each do |article|
       tr
-        td == article.code
         td == article.name
         td == article.price
         td == link_to 'Show', article_path(article)

@@ -1,0 +1,17 @@
+div class="col-xs-8 col-xs-offset-2"
+
+  table.table
+    tr
+      th Date
+      th Client
+      th Items
+    tr
+      td
+        == @invoice.invoice_date
+      td
+        == @invoice.client
+      td
+        - @invoice.articles.each do |item|
+          == "#{item.name}, with price #{item.price}<br />".html_safe
+
+  == link_to 'Back', invoices_path, class: 'btn btn-danger btn-block'

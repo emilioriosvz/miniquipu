@@ -1,0 +1,16 @@
+div class="col-xs-8 col-xs-offset-2"
+
+  table.table
+    tr
+      th Code
+      th Name
+      th Price
+    tr
+      td
+        == @article.code
+      td
+        == @article.name
+      td
+        == @article.price
+
+  == link_to 'Back', invoices_path, class: 'btn btn-danger btn-block'

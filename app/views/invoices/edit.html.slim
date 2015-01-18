@@ -1,2 +1,5 @@
-h1 class="col-xs-4 col-xs-offset-4" Editing Invoice
-== render 'form'
+div class="col-xs-4 col-xs-offset-4"
+  h1 Editing Invoice
+  == render 'form'
+  == link_to 'Add Article', new_invoice_article_path(@invoice), class: 'btn btn-success btn-block'
+  == link_to 'Back', invoices_path, class: 'btn btn-danger btn-block'

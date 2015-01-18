@@ -1,26 +1,24 @@
-div class="col-xs-4 col-xs-offset-4"
-  = form_for :invoice, url: invoices_path do |f|
-    - if @invoice.errors.any?
-        div#error_explanation
-          h2
-            - pluralize(@invoice.errors.count, "error")
-              prohibited this invoice from being saved:
-          ul
-            - @invoice.errors.full_messages.each do |msg|
-              li == msg
-    p
-      |
-      == f.label :invoice_date
-      br
-      == f.date_field :invoice_date, value: Time.now.strftime('%Y-%m-%d'), class: 'form-control'
+= form_for :invoice, url: invoices_path do |f|
+  - if @invoice.errors.any?
+      div#error_explanation
+        h2
+          - pluralize(@invoice.errors.count, "error")
+            prohibited this invoice from being saved:
+        ul
+          - @invoice.errors.full_messages.each do |msg|
+            li == msg
+  p
+    |
+    == f.label :invoice_date
+    br
+    == f.date_field :invoice_date, value: Time.now.strftime('%Y-%m-%d'), class: 'form-control'
 
-    p
-      |
-      == f.label :client
-      br
-      == f.text_area :client, class: 'form-control'
-    p
-      |
-      == f.submit class: 'btn btn-primary btn-block'
+  p
+    |
+    == f.label :client
+    br
+    == f.text_area :client, class: 'form-control'
+  p
+    |
+    == f.submit class: 'btn btn-primary btn-block'
 
-    == link_to 'Back', invoices_path, class: 'btn btn-danger btn-block'

@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20150115230637) do
 
   create_table "articles", force: :cascade do |t|
-    t.integer "code",  limit: 4
-    t.string  "name",  limit: 255
-    t.float   "price", limit: 24
+    t.string  "name",       limit: 255
+    t.float   "price",      limit: 24
+    t.integer "invoice_id", limit: 4
   end
 
   create_table "expenses", force: :cascade do |t|

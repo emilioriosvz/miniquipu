@@ -1,5 +1,5 @@
 div class="col-xs-4 col-xs-offset-4"
-  = form_for :article, url: articles_path do |f|
+  = form_for :article, url: create_article_path do |f|
     - if @article.errors.any?
         div#error_explanation
           h2
@@ -8,11 +8,6 @@ div class="col-xs-4 col-xs-offset-4"
           ul
             - @article.errors.full_messages.each do |msg|
               li == msg
-    p
-      |
-      == f.label :code
-      br
-      == f.number_field :code, class: 'form-control'
 
     p
       |
