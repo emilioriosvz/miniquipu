@@ -1,0 +1,13 @@
+nav.navbar class="navbar-default"
+  .container-fluid
+    //Brand and toggle get grouped for better mobile display
+    div class="navbar-header"
+      == link_to 'MiniQuipu', invoices_path, class: "navbar-brand"
+
+      ul class="nav navbar-nav navbar-right"
+        li.active
+          == link_to 'Invoices', invoices_path
+        li
+           == link_to 'Articles', articles_index_path
+        li
+          a href="#" Cuentas

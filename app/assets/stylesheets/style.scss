@@ -1,0 +1,20 @@
+// style.scss
+
+/* VARIABLES */
+
+@import "compass";
+
+//alien code (frameworks, etc...)
+@import "0-plugins/dir-plugins";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//own variables and mixins
+@import "1-mixins-variables/dir-mixins-variables";
+
+//own elements. (tables, cards, tabs...)
+@import "2-modules/dir-modules";
+
+//own views. (Home page, detail view...)
+@import "3-layouts/dir-layouts";
