@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+<<<<<<< HEAD
     @articles = Article.all
   end
 
@@ -37,3 +38,7 @@ class ArticlesController < ApplicationController
     end
 
 end
+=======
+  end
+end
+>>>>>>> cfb1231e04abc8ca899c7fb8b26a8998a54d5e82

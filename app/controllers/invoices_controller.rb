@@ -1,5 +1,6 @@
 class InvoicesController < ApplicationController
   def index
+<<<<<<< HEAD
     @invoices = Invoice.all
   end
 
@@ -36,4 +37,7 @@ class InvoicesController < ApplicationController
       params.require(:invoice).permit(:invoice_date, :client)
     end
 
+=======
+  end
+>>>>>>> cfb1231e04abc8ca899c7fb8b26a8998a54d5e82
 end
