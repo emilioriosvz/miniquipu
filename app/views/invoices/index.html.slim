@@ -13,6 +13,7 @@ div class="col-xs-8 col-xs-offset-2"
         td == invoice.articles.count
         td == link_to 'Show', invoice_path(invoice)
         td == link_to 'Edit', edit_invoice_path(invoice)
+        td == link_to 'Print', print_pdf_path(id: invoice.id)
         td == link_to 'Destroy', invoice_path(invoice),
                                   method: :delete, data: { confirm: 'Are you shure?'}
   == link_to 'New', new_invoice_path, class: 'btn btn-success btn-block'
