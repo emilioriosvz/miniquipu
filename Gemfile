@@ -16,6 +16,7 @@ gem 'slim'
 gem 'compass-rails'
 gem 'bootstrap-sass'
 gem 'prawn'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'

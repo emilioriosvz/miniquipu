@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'pdf', to: 'invoices#print', as: :print_pdf
 
+  get 'dashboard', to: 'dashboards#index'
+
   root 'invoices#index'
 
 end

@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-2 col-md-offset-2">
+    <div class="row">
+      <%= fa_icon "money 4x", class: "text-muted pull-left fa-square" %>
+      <h3><%= @invoices %>€</h3>
+    </div>
+    <div class="row">
+      <p><%= @invoices %> euros invoiced in this period!</p>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="row">
+      <%= fa_icon "ticket 4x", class: "text-muted pull-left" %>
+      <h3><%=@expenses %>€</h3>
+    </div>
+    <p><%=@expenses %> euros in expenses incurred in this period.</p>
+  </div>
+  <div class="col-md-2">
+    <div class="row">
+      <% if @state > 0 %>
+      <%= fa_icon "level-up 4x", class: "text-muted pull-left" %>
+      <% else %>
+      <%= fa_icon "level-down 4x", class: "text-muted pull-left" %>
+      <% end %>
+      <h3><%= @state %>€</h3>
+    </div>
+    <% if @state > 0 %>
+      <p>You have a profit of <%= @state %> euros</p>
+      <% else %>
+      <p>You have a loss of <%= @state %> euros</p>
+      <% end %>
+  </div>
+  <div class="col-md-2">
+    <div class="row">
+      <%= fa_icon "list-ol 4x", class: "text-muted pull-left" %>
+      <h3><%=@movements %></h3>
+    </div>
+    <p><%=@movements %> movements in this period.</p>
+  </div>
+</div>
+
